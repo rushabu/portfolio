@@ -1,0 +1,122 @@
+.home-hero {
+  padding: 2rem 0 1rem;
+}
+
+.hero-kicker {
+  margin-bottom: 0.25rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  margin: 0;
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  line-height: 1.05;
+}
+
+.hero-copy {
+  max-width: 42rem;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: var(--secondary-text);
+}
+
+.section-grid,
+.feature-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.section-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin: 2rem 0 3rem;
+}
+
+.section-card,
+.feature-item {
+  display: block;
+  padding: 1.15rem;
+  border: 2px solid var(--text-color);
+  border-radius: 16px;
+  background: var(--bg-color);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.section-card:hover,
+.feature-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 6px 6px 0 var(--text-color);
+  text-decoration: none;
+}
+
+.section-card-label {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.section-card p,
+.feature-item p {
+  margin: 0;
+  line-height: 1.7;
+  color: var(--secondary-text);
+}
+
+.home-feature {
+  margin: 2rem 0 0;
+}
+
+.feature-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.feature-header h2,
+.feature-item h2,
+.feature-item h3 {
+  margin: 0 0 0.5rem;
+}
+
+.feature-meta {
+  margin-bottom: 0.6rem;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--secondary-text);
+}
+
+.section-intro {
+  margin-bottom: 2rem;
+}
+
+.markdown-body h2 {
+  margin-top: 2.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.markdown-body h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.markdown-body ul li,
+.markdown-body ol li {
+  margin-bottom: 0.5rem;
+}
+
+.markdown-body hr {
+  margin: 2.5rem 0;
+  border: none;
+  border-top: 2px solid var(--border-color);
+}
+
+@media screen and (max-width: 600px) {
+  .feature-header {
+    display: block;
+  }
+}

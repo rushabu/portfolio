@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang | default `en` }}" prefix="og: http://ogp.me/ns#">
+{{ partial "head.html" . }}
+
+<body>
+  <article class="posts">
+    <div class="row">
+      <div class="col-xs-12">
+        {{ partial "header.html" . }}
+
+        <section class="home-hero">
+          <p class="hero-kicker">Portfolio</p>
+          <h1 class="hero-title">Rushabh Shah's portfolio across AI, systems, and product engineering.</h1>
+          <p class="hero-copy">
+            A focused collection of projects, leadership work, achievements, and writing shaped by full-stack development,
+            machine learning, distributed systems, and practical product building.
+          </p>
+        </section>
+
+        <section class="section-grid">
+          <a class="section-card" href="{{ `about/` | relURL }}">
+            <span class="section-card-label">About Me</span>
+            <p>An introduction to how I think, what I enjoy building, and the technical areas I keep returning to.</p>
+          </a>
+          <a class="section-card" href="{{ `education/` | relURL }}">
+            <span class="section-card-label">Education</span>
+            <p>My academic path through diploma and B.Tech studies in computer science at NMIMS MPSTME.</p>
+          </a>
+          <a class="section-card" href="{{ `roles-and-responsibilities/` | relURL }}">
+            <span class="section-card-label">Roles and Responsibilities</span>
+            <p>Leadership, community-building, internships, and the ownership I have taken across teams and initiatives.</p>
+          </a>
+          <a class="section-card" href="{{ `projects/` | relURL }}">
+            <span class="section-card-label">Projects</span>
+            <p>Fifteen selected projects spanning RAG, privacy-preserving AI, computer vision, systems, and full-stack apps.</p>
+          </a>
+          <a class="section-card" href="{{ `achievements/` | relURL }}">
+            <span class="section-card-label">Achievements</span>
+            <p>Research and hackathon milestones that reflect both technical depth and practical execution.</p>
+          </a>
+          <a class="section-card" href="{{ `skills/` | relURL }}">
+            <span class="section-card-label">Skills</span>
+            <p>My technical stack across programming, frontend, backend, AI/ML, analytics, databases, and infrastructure.</p>
+          </a>
+          <a class="section-card" href="{{ `blogs/` | relURL }}">
+            <span class="section-card-label">Blogs</span>
+            <p>Short, informal writing on engineering choices, learning, and the thought process behind technical work.</p>
+          </a>
+        </section>
+
+        <section class="home-feature">
+          <div class="feature-header">
+            <h2>Latest Blogs</h2>
+            <a href="{{ `blogs/` | relURL }}">View all</a>
+          </div>
+          <div class="feature-list">
+            {{ range first 3 ((where site.RegularPages "Section" "blogs").ByDate.Reverse) }}
+            <a class="feature-item" href="{{ .RelPermalink }}">
+              <div class="feature-meta">{{ .Date.Format "02 Jan 2006" }}</div>
+              <h3>{{ .Title }}</h3>
+              <p>{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify }}{{ end }}</p>
+            </a>
+            {{ end }}
+          </div>
+        </section>
+
+        {{ partial "footer.html" . }}
+      </div>
+    </div>
+  </article>
+
+  {{ partial "scripts.html" . }}
+</body>
+</html>

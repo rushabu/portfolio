@@ -1,0 +1,48 @@
+baseURL = "https://rushabu.github.io/rushabh-shah/"
+defaultContentLanguage = "en"
+title = "Rushabh Shah"
+theme = "yinyang"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[params]
+description = "Portfolio, selected work, and writing."
+headTitle = "Rushabh Shah"
+mainSections = ["blogs"]
+lazyImage = true
+extraCSSFiles = ["css/custom.css"]
+
+[params.author]
+name = "Rushabh Shah"
+homepage = "about/"
+
+[[params.socials]]
+name = "About"
+link = "about/"
+
+[[params.socials]]
+name = "Education"
+link = "education/"
+
+[[params.socials]]
+name = "Roles"
+link = "roles-and-responsibilities/"
+
+[[params.socials]]
+name = "Projects"
+link = "projects/"
+
+[[params.socials]]
+name = "Achievements"
+link = "achievements/"
+
+[[params.socials]]
+name = "Skills"
+link = "skills/"
+
+[[params.socials]]
+name = "Blogs"
+link = "blogs/"
