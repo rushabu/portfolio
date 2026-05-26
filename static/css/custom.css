@@ -38,7 +38,7 @@
 .feature-item {
   display: block;
   padding: 1.15rem;
-  border: 2px solid var(--text-color);
+  border: 2px solid var(--border-color);
   border-radius: 16px;
   background: var(--bg-color);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -47,7 +47,7 @@
 .section-card:hover,
 .feature-item:hover {
   transform: translateY(-2px);
-  box-shadow: 6px 6px 0 var(--text-color);
+  box-shadow: 6px 6px 0 var(--border-color);
   text-decoration: none;
 }
 
