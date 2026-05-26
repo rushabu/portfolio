@@ -138,6 +138,10 @@ But hopefully, one day:
 
 ```text
 日本へ行きます。
+
+日本 - にほん (Nihon) - Japan
+へ - え (pronounced “e”) - to
+行きます  - いきます (ikimasu) - go
 ```
 
 > “I will go to Japan.”
