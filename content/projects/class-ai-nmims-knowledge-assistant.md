@@ -1,6 +1,6 @@
 +++
 title = "Class-AI - NMIMS Knowledge Assistant"
-date = 2026-05-18T10:15:00+05:30
+date = 2026-05-20T10:15:00+05:30
 description = "A production-grade RAG system for NMIMS MPSTME built with hybrid retrieval, reranking, FastAPI, and Dockerized deployment."
 +++
 

@@ -1,6 +1,6 @@
 +++
 title = "FrameSift - Keyframe Detection"
-date = 2026-05-14T10:15:00+05:30
+date = 2026-05-20T10:15:00+05:30
 description = "A multimodal video analysis pipeline for reducing review workload through keyframe extraction and OCR fusion."
 +++
 

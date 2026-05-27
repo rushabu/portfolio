@@ -1,6 +1,6 @@
 +++
 title = "Tutor - AI Study Suite"
-date = 2026-05-08T10:15:00+05:30
+date = 2026-05-20T10:15:00+05:30
 description = "A private, offline-capable local-LLM study suite built with Ollama and LangChain."
 +++
 

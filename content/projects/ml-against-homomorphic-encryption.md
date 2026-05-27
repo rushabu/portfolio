@@ -1,6 +1,6 @@
 +++
 title = "ML Against Homomorphic Encryption"
-date = 2026-05-16T10:15:00+05:30
+date = 2026-05-20T10:15:00+05:30
 description = "A privacy and security study showing how ML can infer encrypted computation patterns through metadata side channels."
 +++
 

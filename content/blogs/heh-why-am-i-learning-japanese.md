@@ -1,12 +1,10 @@
 +++
 title = "Heh, why am i learning japanese..."
-date = 2026-05-06T09:00:00+05:30
+date = 2026-05-27T09:00:00+05:30
 description = "A short story on why am I learning JAPANESE."
 [author]
 homepage = "/about/"
 +++
-
-# Why Am I Learning Japanese?
 
 Ever since 2020, I’ve been deeply interested in Japanese culture, language, and technology.
 

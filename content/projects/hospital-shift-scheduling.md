@@ -1,6 +1,6 @@
 +++
 title = "Hospital Shift Scheduling"
-date = 2026-05-09T10:15:00+05:30
+date = 2026-05-20T10:15:00+05:30
 description = "A constraint-driven scheduling system for generating high-quality weekly hospital staffing plans."
 +++
 

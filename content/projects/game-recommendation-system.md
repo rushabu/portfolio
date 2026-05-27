@@ -1,6 +1,6 @@
 +++
 title = "Game Recommendation System"
-date = 2026-05-10T10:15:00+05:30
+date = 2026-05-20T10:15:00+05:30
 description = "A comparative recommendation study benchmarking multiple NLP vectorization strategies on Steam game metadata."
 +++
 

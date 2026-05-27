@@ -1,6 +1,6 @@
 +++
 title = "Deadlock Vaccination"
-date = 2026-05-13T10:15:00+05:30
+date = 2026-05-20T10:15:00+05:30
 description = "A proactive deadlock-prevention system built around resource analysis, graph reasoning, and live visualization."
 +++
 

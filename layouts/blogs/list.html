@@ -16,7 +16,7 @@
         </header>
 
         <div class="feature-list">
-          {{ range .Pages.ByDate.Reverse }}
+          {{ range .RegularPages.ByDate.Reverse }}
           <a class="feature-item" href="{{ .RelPermalink }}">
             <div class="feature-meta">{{ .Date.Format "02 Jan 2006" }}</div>
             <h2>{{ .Title }}</h2>

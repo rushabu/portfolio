@@ -1,6 +1,6 @@
 +++
 title = "Synthetic Memory"
-date = 2026-05-12T10:15:00+05:30
+date = 2026-05-20T10:15:00+05:30
 description = "A deployed full-stack AI memory layer that retrieves across emails, Slack, and documents with source-aware answers."
 +++
 

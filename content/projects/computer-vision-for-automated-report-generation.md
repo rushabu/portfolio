@@ -1,6 +1,6 @@
 +++
 title = "Computer Vision for Automated Report Generation"
-date = 2026-05-11T10:15:00+05:30
+date = 2026-05-20T10:15:00+05:30
 description = "A computer vision workflow for change detection in satellite imagery with structured report generation."
 +++
 

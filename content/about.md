@@ -1,6 +1,6 @@
 +++
 title = "About Me"
-date = 2026-05-18T23:30:00+05:30
+date = 2026-05-20T23:30:00+05:30
 +++
 
 I build software that is practical, thoughtful, and easy for people to use. I enjoy working at the intersection of product thinking, clean engineering, and clear communication.

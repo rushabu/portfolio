@@ -1,6 +1,6 @@
 +++
 title = "Interactive OS Algorithms Simulation Platform"
-date = 2026-05-06T10:15:00+05:30
+date = 2026-05-20T10:15:00+05:30
 description = "A browser-accessible simulator for classic operating systems algorithms with live comparison tooling."
 +++
 

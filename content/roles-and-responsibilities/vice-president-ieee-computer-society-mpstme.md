@@ -1,6 +1,6 @@
 +++
 title = "Vice President"
-date = 2026-05-18T11:00:00+05:30
+date = 2026-05-20T11:00:00+05:30
 description = "Led IEEE Computer Society MPSTME initiatives, events, and team coordination across a 30+ member group."
 +++
 

@@ -1,6 +1,6 @@
 +++
 title = "Decentralized Clinical Trial"
-date = 2026-05-17T10:15:00+05:30
+date = 2026-05-20T10:15:00+05:30
 description = "A federated learning system for privacy-preserving clinical trials spanning distributed coordination, differential privacy, and consensus."
 +++
 

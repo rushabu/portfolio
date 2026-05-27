@@ -1,6 +1,6 @@
 +++
 title = "Search Engine - Exa"
-date = 2026-05-05T10:15:00+05:30
+date = 2026-05-20T10:15:00+05:30
 description = "A semantic retrieval project exploring meaning-aware search with the Exa neural search API."
 +++
 

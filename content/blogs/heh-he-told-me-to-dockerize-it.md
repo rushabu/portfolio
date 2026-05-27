@@ -1,6 +1,6 @@
 +++
 title = "Heh, he told me to dockerize it..."
-date = 2026-05-10T09:00:00+05:30
+date = 2026-05-24T09:00:00+05:30
 description = "A short story about how I had to use DOCKER."
 [author]
 homepage = "/about/"

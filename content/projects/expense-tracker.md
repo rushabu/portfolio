@@ -1,6 +1,6 @@
 +++
 title = "Expense Tracker"
-date = 2026-05-04T10:15:00+05:30
+date = 2026-05-20T10:15:00+05:30
 description = "A personal finance app with persistent expense logging, category views, and trend visualization."
 +++
 

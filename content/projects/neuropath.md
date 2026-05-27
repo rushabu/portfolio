@@ -1,6 +1,6 @@
 +++
 title = "Neuropath"
-date = 2026-05-15T10:15:00+05:30
+date = 2026-05-20T10:15:00+05:30
 description = "An adaptive onboarding engine that converts resume-job skill gaps into a personalized learning path."
 +++
 

@@ -1,6 +1,6 @@
 +++
 title = "Research Publication"
-date = 2026-05-18T12:00:00+05:30
+date = 2026-05-20T12:00:00+05:30
 description = "Published a Web of Science paper in JoPC (2025) on chassis material trade-offs for gesture-controlled robots."
 +++
 

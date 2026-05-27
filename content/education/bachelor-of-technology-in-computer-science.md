@@ -1,6 +1,6 @@
 +++
 title = "Bachelor of Technology in Computer Science"
-date = 2026-05-18T10:00:00+05:30
+date = 2026-05-20T10:00:00+05:30
 description = "B.Tech at NMIMS MPSTME, Mumbai with a CGPA of 3.57 and a growing focus on AI systems, software engineering, and applied computing."
 +++
 

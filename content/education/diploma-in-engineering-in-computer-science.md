@@ -1,6 +1,6 @@
 +++
 title = "Diploma in Engineering in Computer Science"
-date = 2026-05-17T10:00:00+05:30
+date = 2026-05-20T10:00:00+05:30
 description = "Diploma at NMIMS MPSTME, Mumbai with a CGPA of 3.58, where I built my grounding in programming, systems, and practical experimentation."
 +++
 

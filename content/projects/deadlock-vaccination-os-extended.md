@@ -1,6 +1,6 @@
 +++
 title = "Deadlock Vaccination OS (Extended)"
-date = 2026-05-07T10:15:00+05:30
+date = 2026-05-20T10:15:00+05:30
 description = "An extended operating-systems simulation that stress-tests the deadlock vaccination approach under realistic concurrency."
 +++
 
