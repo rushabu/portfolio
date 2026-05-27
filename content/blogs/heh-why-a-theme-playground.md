@@ -1,33 +1,18 @@
 +++
 title = "Heh, why a theme playground..."
 date = 2026-05-28T00:00:00+05:30
-description = "A write-up on why I built a theme playground and how its page-local color overrides work."
+description = "A color theme PLAYGROUND."
 [author]
 homepage = "/about/"
 +++
 
-Sometimes the fastest way to understand a visual system is to stop talking about it and start dragging color values around.
-
-That is basically why I wanted a theme playground.
-
-Not a full design system.
-Not a huge settings page.
 Just a lightweight place where I can tweak foreground and background colors in real time and see what the site feels like immediately.
 
 ---
 
-## Why build it as a blog?
+## The Playground
 
-Because this is one of those features that is more fun when it is explained as much as it is implemented.
-
-Instead of hiding the idea somewhere else, I wanted it to live as a small technical note:
-
-- what problem it solves
-- how it works
-- what exactly it overrides
-- why it only affects this page
-
-That makes it both a playground and a tiny engineering write-up.
+{{< theme-playground >}}
 
 ---
 
@@ -75,20 +60,3 @@ So the behavior is:
 
 That keeps it experimental instead of turning it into a site-wide preference system.
 
----
-
-## The Playground
-
-{{< theme-playground >}}
-
----
-
-## Final Thought
-
-I like this version better than a global color feature because it stays playful.
-
-It shows the implementation, demonstrates the effect, and keeps the experiment safely local to one article.
-
-That feels very on-brand for a portfolio blog:
-
-build something small, make it understandable, and let the explanation be part of the product.
