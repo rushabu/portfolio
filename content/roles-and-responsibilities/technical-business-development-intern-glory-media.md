@@ -2,6 +2,7 @@
 title = "Technical Business Development Intern"
 date = 2026-05-20T11:00:00+05:30
 description = "Worked at the intersection of Gen AI workflows, web scraping, and business process improvement at Glory Media."
+period = "April 2024 - July 2024"
 +++
 
 Glory Media, Remote  

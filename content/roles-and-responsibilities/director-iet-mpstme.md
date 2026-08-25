@@ -2,6 +2,7 @@
 title = "Director"
 date = 2026-05-20T11:00:00+05:30
 description = "Directed IET MPSTME programming across events, workshops, and community-facing technical sessions."
+period = "July 2025 - April 2026"
 +++
 
 IET MPSTME, Mumbai  

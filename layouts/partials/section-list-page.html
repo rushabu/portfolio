@@ -13,6 +13,7 @@
 
       <section class="section-index" aria-label="{{ .Title }} entries">
         <div class="editorial-list">
+          {{ $section := .Section }}
           {{ range $index, $page := .RegularPages.ByDate.Reverse }}
           <a class="editorial-row" href="{{ $page.RelPermalink }}">
             <span class="row-index">{{ printf "%02d" (add $index 1) }}</span>
@@ -20,7 +21,11 @@
               <h2>{{ $page.Title }}</h2>
               <p>{{ with $page.Description }}{{ . }}{{ else }}{{ $page.Summary | plainify | truncate 155 }}{{ end }}</p>
             </span>
+            {{ with $page.Params.period }}
+            <span class="row-date">{{ . }}</span>
+            {{ else }}{{ if eq $section "blogs" }}
             <time class="row-date" datetime="{{ $page.Date.Format `2006-01-02` }}">{{ $page.Date.Format "2006.01.02" }}</time>
+            {{ end }}{{ end }}
           </a>
           {{ end }}
         </div>
