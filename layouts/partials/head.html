@@ -1,30 +1,14 @@
 <head>
   <meta charset="utf-8" />
   {{ hugo.Generator }}
-
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0a0907" />
   <meta name="author" content="{{ .Site.Params.author.name }}" />
   <meta property="og:url" content="{{ .Permalink }}" />
   <link rel="canonical" href="{{ .Permalink }}" />
 
-  {{- if .Site.Params.staticPrefix -}}
-  <link rel="dns-prefetch" href="{{ .Site.Params.staticPrefix }}" />
-  {{- end -}}
-  {{- if .Site.Params.favicon -}}
-  <link rel="apple-touch-icon" href="{{ .Site.Params.favicon }}" />
-  <link rel="icon" href="{{ .Site.Params.favicon }}" />
-  <link rel="shortcut" href="{{ .Site.Params.favicon }}" />
-  {{- end -}}
-  <link
-    rel="alternate"
-    type="application/atom+xml"
-    href="{{ .Site.BaseURL }}index.xml"
-    title="{{ .Site.Title }}"
-  />
-
   {{ partial "seo" . }}
-
   {{- if .IsHome -}}
   <title>{{ .Site.Title }}</title>
   <meta property="og:title" content="{{ .Site.Title }}" />
@@ -32,105 +16,24 @@
   <meta property="og:description" content="{{ .Site.Params.description }}" />
   <meta name="description" content="{{ .Site.Params.description }}" />
   {{- else -}}
-  <title>{{ .Title }}</title>
+  <title>{{ .Title }} · {{ .Site.Title }}</title>
   <meta property="og:title" content="{{ .Title }}" />
   <meta property="og:type" content="article" />
-  <meta
-    property="og:description"
-    content="{{ default .Summary .Description | plainify }}"
-  />
-  <meta
-    name="description"
-    content="{{ default .Summary .Description | plainify }}"
-  />
+  <meta property="og:description" content="{{ default .Summary .Description | plainify }}" />
+  <meta name="description" content="{{ default .Summary .Description | plainify }}" />
   {{- end }}
   <meta property="og:locale" content="{{ .Site.Language.Lang | default `en` }}" />
-  {{- if .Params.album -}}
-  <meta property="og:image" content="{{ .Params.album }}" />
-  {{- else -}}
-  <meta property="og:image" content="{{ .Site.Params.favicon }}" />
-  {{ end }}
-  {{ with resources.Get "css/index.css" | minify }}
-  <style>{{ .Content | safeCSS }}</style>
-  {{ end }}
-  {{ with resources.Get "css/flexboxgrid-6.3.1.min.css" | minify }}
-  <style>{{ .Content | safeCSS }}</style>
-  {{ end }}
-  {{ range .Site.Params.extraCSSFiles -}}
-  <link
-    rel="stylesheet"
-    href="{{ $.Site.Params.staticPrefix }}{{ . | relURL }}"
-  />
-  {{- end }}
-  <link
-    href="{{ .Site.Params.staticPrefix }}{{ `index.xml` | relURL }}"
-    rel="alternate"
-    type="application/rss+xml"
-    title="{{ .Site.Title }}"
-  />
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link
-    href="https://fonts.googleapis.com/css?family=Bree+Serif|Bungee+Shade"
-    rel="stylesheet"
-  />
 
-  <script data-cfasync="false">
-    (function() {
-      const themeKey = "theme";
-      const themes = { light: "light", dark: "dark", system: "system" };
+  {{ $themeCSS := resources.Get "css/index.css" }}
+  {{ $gridCSS := resources.Get "css/flexboxgrid-6.3.1.min.css" }}
+  {{ $siteCSS := resources.Get "css/site.css" }}
+  {{ $styles := slice $themeCSS $gridCSS $siteCSS | resources.Concat "css/site.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" />
 
-      function getSystemTheme() {
-        return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-      }
-
-      function getStoredTheme() {
-        return localStorage.getItem(themeKey);
-      }
-
-      function updateToggleButton(theme) {
-        const button = document.getElementById("theme-toggle");
-        if (button) {
-          button.textContent = theme === "dark" ? "Light" : "Dark";
-        }
-      }
-
-      function setTheme(theme) {
-        const root = document.documentElement;
-        const resolvedTheme = theme === themes.system ? getSystemTheme() : theme;
-        if (resolvedTheme === themes.dark) {
-          root.setAttribute("data-theme", "dark");
-        } else {
-          root.removeAttribute("data-theme");
-        }
-        updateToggleButton(resolvedTheme);
-      }
-
-      function toggleTheme() {
-        const current = getStoredTheme() || themes.system;
-        const next = current === themes.dark ? themes.light : themes.dark;
-        localStorage.setItem(themeKey, next);
-        setTheme(next);
-      }
-
-      window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function() {
-        const stored = getStoredTheme();
-        if (!stored || stored === themes.system) {
-          setTheme(themes.system);
-        }
-      });
-
-      window.toggleTheme = toggleTheme;
-      setTheme(getStoredTheme() || themes.system);
-
-      if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", function() {
-          updateToggleButton(getStoredTheme() || getSystemTheme());
-        });
-      } else {
-        updateToggleButton(getStoredTheme() || getSystemTheme());
-      }
-    })();
-  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="{{ `index.xml` | relURL }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
   {{ template "_internal/google_analytics.html" . }}
   {{ if .Site.Params.TwitterCards }}{{ template "_internal/twitter_cards.html" . }}{{ end }}
   {{ .Site.Params.extraHead | safeHTML }}

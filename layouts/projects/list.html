@@ -1,35 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ .Site.Language.Lang | default `en` }}">
 {{ partial "head.html" . }}
-
 <body>
   <article class="posts">
-    <div class="row">
-      <div class="col-xs-12">
-        {{ partial "header.html" . }}
-
-        <header class="post-header">
-          <h1 class="post-title">{{ .Title }}</h1>
-          {{ with .Content }}
-          <div class="post-content markdown-body section-intro">{{ . }}</div>
-          {{ end }}
-        </header>
-
-        <div class="feature-list">
-          {{ range .Pages.ByDate.Reverse }}
-          <a class="feature-item" href="{{ .RelPermalink }}">
-            <div class="feature-meta">{{ .Date.Format "02 Jan 2006" }}</div>
-            <h2>{{ .Title }}</h2>
-            <p>{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify }}{{ end }}</p>
-          </a>
-          {{ end }}
-        </div>
-
-        {{ partial "footer.html" . }}
+    {{ partial "header.html" . }}
+    <main id="main-content" class="coming-soon">
+      <div class="coming-soon-inner">
+        <p class="overline">projects / status</p>
+        <h1>Coming Soon</h1>
+        <p>The projects section is getting a rebuild — check back soon.</p>
+        <div class="loading-line" aria-hidden="true"></div>
       </div>
-    </div>
+    </main>
+    {{ partial "footer.html" . }}
   </article>
-
   {{ partial "scripts.html" . }}
 </body>
 </html>

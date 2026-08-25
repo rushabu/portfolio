@@ -1,20 +1,15 @@
-<header>
-  <div class="header-title">
-    <a href="{{ `` | relURL }}">{{ or .Site.Params.headTitle .Site.Params.author.name }}</a>
-  </div>
-  <div class="header-subtitle">{{ .Site.Params.Description }}</div>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-nav" data-nav>
+  <a class="site-brand" href="{{ `` | relURL }}" aria-label="{{ .Site.Title }} home">
+    <span aria-hidden="true">~/</span>{{ or .Site.Params.headTitle .Site.Params.author.name }}
+  </a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-nav-toggle>
+    <span class="sr-only">Toggle navigation</span>
+    <span>menu</span>
+  </button>
+  <nav id="primary-navigation" class="nav-links" aria-label="Primary navigation" data-nav-menu>
+    {{ range .Site.Params.socials }}
+    <a href="{{ if hasPrefix .link `http` }}{{ .link }}{{ else }}{{ .link | relURL }}{{ end }}" {{ if hasPrefix .link "http" }}target="_blank" rel="noreferrer"{{ end }}>{{ lower .name }}</a>
+    {{ end }}
+  </nav>
 </header>
-<div class="row end-md header-items">
-  <div class="header-item-left">
-    <button id="theme-toggle" onclick="toggleTheme()" class="theme-toggle">
-      Toggle
-    </button>
-  </div>
-
-  {{ range .Site.Params.socials }}
-  <div class="header-item">
-    <a href="{{ if hasPrefix .link `http` }}{{ .link }}{{ else }}{{ .link | relURL }}{{ end }}" {{ if hasPrefix .link "http" }}target="_blank" rel="noreferrer"{{ end }}>{{ .name }}</a>
-  </div>
-  {{ end }}
-</div>
-<div class="header-line"></div>

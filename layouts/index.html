@@ -1,74 +1,79 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.Language.Lang | default `en` }}" prefix="og: http://ogp.me/ns#">
 {{ partial "head.html" . }}
+<body class="home-page">
+  <article class="site-shell posts">
+    {{ partial "header.html" . }}
+    <main id="main-content">
+      <section class="terminal-intro" aria-labelledby="intro-title">
+        <p class="overline">Interactive portfolio / 2026</p>
+        <h1 id="intro-title">Rushabh Shah</h1>
+        <p>Computer science engineer working across AI systems, backend engineering, and useful digital products.</p>
+      </section>
 
-<body>
-  <article class="posts">
-    <div class="row">
-      <div class="col-xs-12">
-        {{ partial "header.html" . }}
-
-        <section class="home-hero">
-          <p class="hero-kicker">Portfolio</p>
-          <h1 class="hero-title">My portfolio across AI, systems, and product engineering.</h1>
-          <p class="hero-copy">
-            A focused collection of projects, leadership work, achievements, and writing shaped by full-stack development,
-            machine learning, distributed systems, and practical product building.
-          </p>
-        </section>
-
-        <section class="section-grid">
-          <a class="section-card" href="{{ `about/` | relURL }}">
-            <span class="section-card-label">About Me</span>
-            <p>An introduction to how I think, what I enjoy building, and the technical areas I keep returning to.</p>
-          </a>
-          <a class="section-card" href="{{ `education/` | relURL }}">
-            <span class="section-card-label">Education</span>
-            <p>My academic path through diploma and B.Tech studies in computer science at NMIMS MPSTME.</p>
-          </a>
-          <a class="section-card" href="{{ `roles-and-responsibilities/` | relURL }}">
-            <span class="section-card-label">Roles and Responsibilities</span>
-            <p>Leadership, community-building, internships, and the ownership I have taken across teams and initiatives.</p>
-          </a>
-          <a class="section-card" href="{{ `projects/` | relURL }}">
-            <span class="section-card-label">Projects</span>
-            <p>Fifteen selected projects spanning RAG, privacy-preserving AI, computer vision, systems, and full-stack apps.</p>
-          </a>
-          <a class="section-card" href="{{ `achievements/` | relURL }}">
-            <span class="section-card-label">Achievements</span>
-            <p>Research and hackathon milestones that reflect both technical depth and practical execution.</p>
-          </a>
-          <a class="section-card" href="{{ `skills/` | relURL }}">
-            <span class="section-card-label">Skills</span>
-            <p>My technical stack across programming, frontend, backend, AI/ML, analytics, databases, and infrastructure.</p>
-          </a>
-          <a class="section-card" href="{{ `blogs/` | relURL }}">
-            <span class="section-card-label">Blogs</span>
-            <p>Short, informal writing on engineering choices, learning, and the thought process behind technical work.</p>
-          </a>
-        </section>
-
-        <section class="home-feature">
-          <div class="feature-header">
-            <h2>Latest Blogs</h2>
-            <a href="{{ `blogs/` | relURL }}">View all</a>
+      <section class="terminal" aria-label="Portfolio terminal"
+        data-terminal
+        data-home="{{ `` | relURL }}"
+        data-about="{{ `about/` | relURL }}"
+        data-education="{{ `education/` | relURL }}"
+        data-roles="{{ `roles-and-responsibilities/` | relURL }}"
+        data-projects="{{ `projects/` | relURL }}"
+        data-achievements="{{ `achievements/` | relURL }}"
+        data-skills="{{ `skills/` | relURL }}"
+        data-blogs="{{ `blogs/` | relURL }}">
+        <div class="terminal-bar" aria-hidden="true">
+          <span class="terminal-led"></span>
+          <span>portfolio — zsh — 80×24</span>
+          <span>⌘</span>
+        </div>
+        <div class="terminal-screen" data-terminal-screen>
+          <div class="terminal-output" data-terminal-output role="log" aria-live="polite" aria-relevant="additions">
+            <p class="terminal-line muted">Last login: {{ now.Format "Mon Jan 02 15:04" }} on portfolio</p>
+            <p class="terminal-line">Welcome. Navigate with a command, a sentence, or a menu number.</p>
+            <div class="terminal-menu" aria-label="Available destinations">
+              <button type="button" data-terminal-command="about"><span>1</span> about</button>
+              <button type="button" data-terminal-command="education"><span>2</span> education</button>
+              <button type="button" data-terminal-command="roles"><span>3</span> roles</button>
+              <button type="button" data-terminal-command="projects"><span>4</span> projects</button>
+              <button type="button" data-terminal-command="achievements"><span>5</span> achievements</button>
+              <button type="button" data-terminal-command="skills"><span>6</span> skills</button>
+              <button type="button" data-terminal-command="blogs"><span>7</span> blogs</button>
+            </div>
+            <p class="terminal-line muted">Try <button class="inline-command" type="button" data-terminal-command="help">help</button>, <button class="inline-command" type="button" data-terminal-command="who are you">who are you</button>, or <button class="inline-command" type="button" data-terminal-command="show me your projects">show me your projects</button>.</p>
           </div>
-          <div class="feature-list">
-            {{ range first 3 ((where site.RegularPages "Section" "blogs").ByDate.Reverse) }}
-            <a class="feature-item" href="{{ .RelPermalink }}">
-              <div class="feature-meta">{{ .Date.Format "02 Jan 2006" }}</div>
-              <h3>{{ .Title }}</h3>
-              <p>{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify }}{{ end }}</p>
-            </a>
-            {{ end }}
-          </div>
-        </section>
+          <form class="terminal-form" data-terminal-form autocomplete="off">
+            <label class="sr-only" for="terminal-input">Enter a portfolio command</label>
+            <span class="terminal-prompt" aria-hidden="true"><span>rushabh@portfolio</span>:~$</span>
+            <input id="terminal-input" data-terminal-input name="command" type="text" inputmode="text" autocapitalize="none" autocomplete="off" spellcheck="false" aria-describedby="terminal-hint" />
+            <span class="terminal-cursor" aria-hidden="true"></span>
+            <button class="terminal-submit" type="submit">enter</button>
+          </form>
+          <p id="terminal-hint" class="terminal-hint">Press Tab to complete · ↑↓ for history · type help for commands</p>
+        </div>
+      </section>
 
-        {{ partial "footer.html" . }}
-      </div>
-    </div>
+      <noscript>
+        <p class="noscript-note">JavaScript is off. Use the navigation above or the links below to explore the portfolio.</p>
+      </noscript>
+
+      <section class="latest-writing" aria-labelledby="latest-title">
+        <div class="section-heading">
+          <div><p class="overline">Latest output</p><h2 id="latest-title">Writing</h2></div>
+          <a href="{{ `blogs/` | relURL }}">all posts →</a>
+        </div>
+        <div class="editorial-list">
+          {{ range first 3 ((where site.RegularPages "Section" "blogs").ByDate.Reverse) }}
+          <a class="editorial-row" href="{{ .RelPermalink }}">
+            <time datetime="{{ .Date.Format `2006-01-02` }}">{{ .Date.Format "2006.01.02" }}</time>
+            <span>{{ .Title }}</span>
+            <small>{{ .ReadingTime }} min</small>
+          </a>
+          {{ end }}
+        </div>
+      </section>
+    </main>
+    {{ partial "footer.html" . }}
   </article>
-
   {{ partial "scripts.html" . }}
 </body>
 </html>

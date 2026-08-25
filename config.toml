@@ -13,7 +13,6 @@ description = "Portfolio, selected work, and writing."
 headTitle = "Rushabh Shah"
 mainSections = ["blogs"]
 lazyImage = true
-extraCSSFiles = ["css/custom.css"]
 
 [params.author]
 name = "Rushabh Shah"

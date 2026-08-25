@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang | default `en` }}">
+{{ partial "head.html" . }}
+<body>
+  <article class="posts">
+    {{ partial "header.html" . }}
+    <main id="main-content">
+      <header class="post-header">
+        <p class="overline">{{ .Section | humanize }}</p>
+        <h1 class="post-title">{{ .Title }}</h1>
+        {{ with .Content }}<div class="section-summary markdown-body">{{ . }}</div>{{ end }}
+      </header>
+
+      <section class="section-index" aria-label="{{ .Title }} entries">
+        <div class="editorial-list">
+          {{ range $index, $page := .RegularPages.ByDate.Reverse }}
+          <a class="editorial-row" href="{{ $page.RelPermalink }}">
+            <span class="row-index">{{ printf "%02d" (add $index 1) }}</span>
+            <span class="row-copy">
+              <h2>{{ $page.Title }}</h2>
+              <p>{{ with $page.Description }}{{ . }}{{ else }}{{ $page.Summary | plainify | truncate 155 }}{{ end }}</p>
+            </span>
+            <time class="row-date" datetime="{{ $page.Date.Format `2006-01-02` }}">{{ $page.Date.Format "2006.01.02" }}</time>
+          </a>
+          {{ end }}
+        </div>
+      </section>
+    </main>
+    {{ partial "footer.html" . }}
+  </article>
+  {{ partial "scripts.html" . }}
+</body>
+</html>

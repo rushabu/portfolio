@@ -1,0 +1,9 @@
+{{ if and .Site.Params.lazyImage (not .IsHome) -}}
+<script src="{{ "js/lazyload.min.js" | relURL }}"></script>
+<script>
+  var articleContainer = document.getElementById("article");
+  if (articleContainer) new LazyLoad({ container: articleContainer });
+</script>
+{{ end }}
+{{ $siteJS := resources.Get "js/site.js" | minify | fingerprint }}
+<script src="{{ $siteJS.RelPermalink }}" integrity="{{ $siteJS.Data.Integrity }}" defer></script>
